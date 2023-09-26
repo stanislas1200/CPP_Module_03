@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:53:22 by sgodin            #+#    #+#             */
-/*   Updated: 2023/09/26 16:14:26 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/09/26 16:52:25 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ class ClapTrap {
 		int hp;
 		int energy;
 		int damage;
-}
+};
 
 #endif 
