@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 16:50:04 by sgodin            #+#    #+#             */
-/*   Updated: 2023/09/26 17:26:57 by sgodin           ###   ########.fr       */
+/*   Created: 2023/09/26 17:31:06 by sgodin            #+#    #+#             */
+/*   Updated: 2023/09/26 17:38:23 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
+#include "../include/ScavTrap.hpp"
 
-int main(void) {
-	ClapTrap box("Box");
-	
-	box.attack("test");
-	box.takeDamage(5);
-	box.beRepaired(5);
+ScavTrap::ScavTrap(std::string name)  : Name(name), hp(10), energy(10), damage(0) {
+	std::cout << GRAY "ScavTrap : " R BOLD << name << GRAY " create." << std::endl;
+}
+
+ScavTrap::~ScavTrap(void) {
+	std::cout << RED "ScavTrap : " R BOLD << this->Name << RED " destroye." << std::endl;
 }

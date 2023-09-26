@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 16:50:04 by sgodin            #+#    #+#             */
-/*   Updated: 2023/09/26 17:26:57 by sgodin           ###   ########.fr       */
+/*   Created: 2023/09/26 17:31:08 by sgodin            #+#    #+#             */
+/*   Updated: 2023/09/26 17:41:09 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main(void) {
-	ClapTrap box("Box");
-	
-	box.attack("test");
-	box.takeDamage(5);
-	box.beRepaired(5);
-}
+# include "./ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap {
+    public:
+		ScavTrap(std::string name);
+		~ScavTrap(void);
+		// ScavTrap& operator=(const ScavTrap& src);
+    private:
+        std::string Name;
+};
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:53:22 by sgodin            #+#    #+#             */
-/*   Updated: 2023/09/26 17:21:38 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/09/26 17:33:00 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define GRAY		"\x1b[1;90m"
 # define GREEN		"\x1b[1;32m"
 
-class ClapTrap {
+class ScavTrapClapTrap {
 	public:
 		ClapTrap(std::string name);
 		~ClapTrap(void);
