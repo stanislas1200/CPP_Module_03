@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:53:22 by sgodin            #+#    #+#             */
-/*   Updated: 2023/09/26 17:33:00 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/09/27 18:26:58 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CLAPTRAP_HPP
 
 # include <iostream>
+# include <iomanip>
 # include <string>
 
 # define R			"\x1b[0m"
@@ -25,7 +26,7 @@
 # define GRAY		"\x1b[1;90m"
 # define GREEN		"\x1b[1;32m"
 
-class ScavTrapClapTrap {
+class ClapTrap {
 	public:
 		ClapTrap(std::string name);
 		~ClapTrap(void);
