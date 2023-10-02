@@ -17,7 +17,7 @@ INCL = include/ClapTrap.hpp
 
 NAME =  a.out
 
-GCC = g++ -std=c++98 -Wall -Wextra -Werror
+GCC = g++ -std=c++98 #-Wall -Wextra -Werror -fsanitize=address
 
 OBJS_DIR = ./objects/
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))

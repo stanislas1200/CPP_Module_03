@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 17:31:06 by sgodin            #+#    #+#             */
-/*   Updated: 2023/09/27 15:17:06 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/01 16:41:11 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,8 @@ void ScavTrap::beRepaired(unsigned int amount) {
 	this->hp += amount;
 	std::cout << YELLOW "ScavTrap : " R BOLD << this->Name << GREEN " repair itself for " MAGENTA << amount << R " hp!" ;
 	std::cout << R "\t\t\t\tstats after [hp: " MAGENTA << this->hp << R ", E: " MAGENTA << this->energy <<R ", D: " MAGENTA << this->damage << R "]" << std::endl;
+}
+
+void ScavTrap::guardGate() {
+	std::cout << MAGENTA "ScavTrap : " R BOLD << this->Name << R << " is now in " MAGENTA "Gate keeper " R "mode." << std::endl;
 }

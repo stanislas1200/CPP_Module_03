@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 17:31:08 by sgodin            #+#    #+#             */
-/*   Updated: 2023/09/27 15:14:52 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/01 16:37:00 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ class ScavTrap : public ClapTrap {
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		void guardGate();
 
 	private:
 		std::string Name;
-		int hp;
-		int energy;
-		int damage;
+		unsigned int hp;
+		unsigned int energy;
+		unsigned int damage;
 };
 
 #endif

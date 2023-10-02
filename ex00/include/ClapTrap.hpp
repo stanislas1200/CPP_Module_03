@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:53:22 by sgodin            #+#    #+#             */
-/*   Updated: 2023/09/26 17:21:38 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/01 13:46:51 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ class ClapTrap {
 	
 	private:
 		std::string Name;
-		int hp;
-		int energy;
-		int damage;
+		unsigned int hp;
+		unsigned int energy;
+		unsigned int damage;
 };
 
 #endif 

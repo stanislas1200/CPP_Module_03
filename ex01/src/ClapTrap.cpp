@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:57:43 by sgodin            #+#    #+#             */
-/*   Updated: 2023/09/26 17:24:51 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/01 16:34:30 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		return std::cout << CYAN "ClapTrap " GRAY "can't do anything..." << std::endl, (void)NULL;
 	this->hp += amount;
 	std::cout << CYAN "ClapTrap : " R BOLD << this->Name << GREEN " repair itself for " MAGENTA << amount << R " hp!" ;
-	std::cout << R "\t\t\t\tstats after [hp: " MAGENTA << this->hp << R ", E: " MAGENTA << this->energy <<R ", D: " MAGENTA << this->damage << R "]" << std::endl;
+	std::cout << R "\t\t\t\t\tstats after [hp: " MAGENTA << this->hp << R ", E: " MAGENTA << this->energy <<R ", D: " MAGENTA << this->damage << R "]" << std::endl;
 }
 
