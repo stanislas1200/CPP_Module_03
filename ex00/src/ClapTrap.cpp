@@ -12,8 +12,16 @@
 
 #include "../include/ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void) : Name("Default"), hp(10), energy(10), damage(0) {
+	std::cout << GRAY "ClapTrap : " R BOLD "Default" GRAY " create." << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) : Name(name), hp(10), energy(10), damage(0) {
 	std::cout << GRAY "ClapTrap : " R BOLD << name << GRAY " create." << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& src) : Name(src.Name), hp(src.hp), energy(src.energy), damage(src.damage) {
+	std::cout << GRAY "ClapTrap : " R BOLD << src.Name << GRAY " create." << std::endl;
 }
 
 ClapTrap::~ClapTrap(void) {
@@ -23,6 +31,7 @@ ClapTrap::~ClapTrap(void) {
 ClapTrap& ClapTrap::operator=(const ClapTrap& src) {
 	if (this != &src)
 	{
+		Name = src.Name;
 		hp = src.hp;
 		energy = src.energy;
 		damage = src.damage;   

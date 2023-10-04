@@ -12,6 +12,14 @@
 
 #include "../include/ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void) : ClapTrap() {
+	std::cout << GRAY "ScavTrap : " R BOLD "Default" GRAY " create." << std::endl;
+	this->Name = "Default";
+	this->hp = 100;
+	this->energy = 50;
+	this->damage = 20;
+}
+
 ScavTrap::ScavTrap(std::string name)  : ClapTrap(name) {
 	std::cout << GRAY "ScavTrap : " R BOLD << name << GRAY " create." << std::endl;
 	this->Name = name;
@@ -20,8 +28,23 @@ ScavTrap::ScavTrap(std::string name)  : ClapTrap(name) {
 	this->damage = 20;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src), Name(src.Name), hp(src.hp), energy(src.energy), damage(src.damage) {
+	std::cout << GRAY "ScavTrap : " R BOLD << src.Name << GRAY " create." << std::endl;
+}
+
 ScavTrap::~ScavTrap(void) {
 	std::cout << RED "ScavTrap : " R BOLD << this->Name << RED " destroye." << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& src) {
+	if (this != &src)
+	{
+		Name = src.Name;
+		hp = src.hp;
+		energy = src.energy;
+		damage = src.damage;   
+	}
+	return *this;
 }
 
 void ScavTrap::attack(const std::string& target) {
@@ -32,21 +55,21 @@ void ScavTrap::attack(const std::string& target) {
 	std::cout << R "\tstats after [hp: " MAGENTA << this->hp << R ", E: " MAGENTA << this->energy <<R ", D: " MAGENTA << this->damage << R "]" << std::endl;
 }
 
-void ScavTrap::takeDamage(unsigned int amount) {
-	if (this->energy < 1 || this->hp < 1)
-		return std::cout << YELLOW "ScavTrap " GRAY "can't do anything..." << std::endl, (void)NULL;
-	this->hp -= amount;
-	std::cout << YELLOW "ScavTrap : " R BOLD << this->Name << RED " take " MAGENTA << amount << R " points of damage!" ;
-	std::cout << R "\t\t\tstats after [hp: " MAGENTA << this->hp << R ", E: " MAGENTA << this->energy <<R ", D: " MAGENTA << this->damage << R "]" << std::endl;
-}
+// void ScavTrap::takeDamage(unsigned int amount) {
+// 	if (this->energy < 1 || this->hp < 1)
+// 		return std::cout << YELLOW "ScavTrap " GRAY "can't do anything..." << std::endl, (void)NULL;
+// 	this->hp -= amount;
+// 	std::cout << YELLOW "ScavTrap : " R BOLD << this->Name << RED " take " MAGENTA << amount << R " points of damage!" ;
+// 	std::cout << R "\t\t\tstats after [hp: " MAGENTA << this->hp << R ", E: " MAGENTA << this->energy <<R ", D: " MAGENTA << this->damage << R "]" << std::endl;
+// }
 
-void ScavTrap::beRepaired(unsigned int amount) {
-	if (this->energy < 1 || this->hp < 1)
-		return std::cout << YELLOW "ScavTrap " GRAY "can't do anything..." << std::endl, (void)NULL;
-	this->hp += amount;
-	std::cout << YELLOW "ScavTrap : " R BOLD << this->Name << GREEN " repair itself for " MAGENTA << amount << R " hp!" ;
-	std::cout << R "\t\t\t\tstats after [hp: " MAGENTA << this->hp << R ", E: " MAGENTA << this->energy <<R ", D: " MAGENTA << this->damage << R "]" << std::endl;
-}
+// void ScavTrap::beRepaired(unsigned int amount) {
+// 	if (this->energy < 1 || this->hp < 1)
+// 		return std::cout << YELLOW "ScavTrap " GRAY "can't do anything..." << std::endl, (void)NULL;
+// 	this->hp += amount;
+// 	std::cout << YELLOW "ScavTrap : " R BOLD << this->Name << GREEN " repair itself for " MAGENTA << amount << R " hp!" ;
+// 	std::cout << R "\t\t\t\tstats after [hp: " MAGENTA << this->hp << R ", E: " MAGENTA << this->energy <<R ", D: " MAGENTA << this->damage << R "]" << std::endl;
+// }
 
 void ScavTrap::guardGate() {
 	std::cout << MAGENTA "ScavTrap : " R BOLD << this->Name << R << " is now in " MAGENTA "Gate keeper " R "mode." << std::endl;

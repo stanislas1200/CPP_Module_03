@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:53:22 by sgodin            #+#    #+#             */
-/*   Updated: 2023/10/01 16:35:15 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/01 13:46:51 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CLAPTRAP_HPP
 
 # include <iostream>
-# include <iomanip>
 # include <string>
 
 # define R			"\x1b[0m"
@@ -28,14 +27,16 @@
 
 class ClapTrap {
 	public:
+		ClapTrap(void);
 		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap& src);
 		~ClapTrap(void);
 		ClapTrap& operator=(const ClapTrap& src);
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 	
-	private:
+	protected:
 		std::string Name;
 		unsigned int hp;
 		unsigned int energy;
